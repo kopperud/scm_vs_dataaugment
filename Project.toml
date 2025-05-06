@@ -1,0 +1,6 @@
+[deps]
+DataStructures = "864edb3b-99cc-5e75-8d2d-829cb0a9cfe8"
+Makie = "ee78f7c6-11fb-53f2-987a-cfe4a2b5a57a"
+NamedArrays = "86f7a689-2022-50b4-a561-43c23ac3c673"
+ProgressMeter = "92933f4c-e287-5a05-a399-4b506db050ca"
+StochasticCharacterMap = "ae31c2cd-9e44-4783-99a9-c92c40e34db9"
