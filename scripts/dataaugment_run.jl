@@ -5,7 +5,7 @@ using Distributions
 using DataStructures
 
 ## read character history
-tree = readsimmap("/home/bkopper/ungulates_simmap.tre")
+tree = readsimmap("data/ungulates_simmap.tre")
 
 ## plot the character history
 treeplot(tree)
