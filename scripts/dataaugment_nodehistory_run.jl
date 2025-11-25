@@ -34,6 +34,7 @@ function nodeProbability(node::Node, model::MkModel)
     C = node.right.outbounds
 
     R_index = findfirst(model.state_space .== R.state)
+    R_index = findfirst(model.state_space .== R.state)
     B_index = findfirst(model.state_space .== B.state)
     C_index = findfirst(model.state_space .== C.state)
 
@@ -163,7 +164,6 @@ function logProbability(node::Root, model::MkModel)
     return(lnl)
 end
 
-
 ## run a data augmentation analysis
 
 tree2 = stochastic_character_map(tree, model)
@@ -191,7 +191,6 @@ ax = Axis(fig[1,1], xlabel = "iteration", ylabel = "log P(Z = z|λ)")
 lines!(ax, 1:1_000, lnls[1:1_000])
 fig
 
-
 ## do some tests of what the metropolis-hastings
 ## ratio would be, if we were to calculate it
 q = nodeProbability(tree2, model)
@@ -202,3 +201,11 @@ p1 = logProbability(tree2, model)
 
 acceptance_probability = exp(p1 - p0) * q[1] / q[3]
 
+Q = [
+    -0.2 0.1
+    0.2 -0.1
+]
+
+model2 = ARDModel(["a", "b"], Q)
+
+transition_probability(model2, 0.5)
